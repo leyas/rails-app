@@ -32,6 +32,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'pygments.rb'
+gem 'redcarpet'
+gem 'quiet_assets'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
