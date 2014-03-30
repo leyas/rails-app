@@ -1,24 +1,12 @@
 <!--<h1># listing gists</h1>-->
 <img src="http://waxs.org/wp-content/uploads/2014/01/Programming_OOP_Wallpaper_by_hexeno.png" title="baner"  width="940px" height="400px" style="margin-top:-60px;"/>
 
-	<% @gists.each do |gist| %>
-	<div class="gist">
-		<h1 class="jezyk">Language: <%= gist.lang %></h1>
-		<%= raw Pygments.highlight(gist.snippet, lexer: gist.lang) %>
-			
-		<div>
-			<p class="opis">
-				<%= gist.description %>
-			</p>
-			<p class="przyciski">
-				<%= link_to 'Show', gist %>
-				<%= link_to 'Edit', edit_gist_path(gist) %>
-				<%= link_to 'Destroy', gist, method: :delete, data: { confirm: 'Are you sure?' } %>
-			</p>
-		</div>
-	</div>
-	<hr />
-	<% end %>
+<div id="my-gists">
+	<%= render @gists %>
+</div>
+<div id="infinite-scrolling">
+  <%= will_paginate @gists %>
+</div>
 
 <br />
 
