@@ -1,4 +1,4 @@
-@import "bootstrap";
+
 
 body {
   background-color: #fff;
@@ -10,6 +10,13 @@ body {
   padding:3rem;
   margin:0 auto;
 }
+
+@media(max-width:900px){
+  body{
+    font-size:10px;
+  }
+}
+
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

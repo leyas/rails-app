@@ -1,0 +1,161 @@
+body{
+	background-color: #fff;
+	color: #333;
+	font-family: verdana, arial, helvetica, sans-serif;
+	line-height: 1em;
+	max-width: 940px;
+	padding: 3em;
+	margin: 0 auto;
+}
+@media (min-width: 901px) {
+	body {
+		font-size: 90%;
+	}
+}
+@media (max-width: 900px) {
+	body {
+		font-size: 77%;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: 72%;
+	}
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 64%;
+	}
+}
+
+@media (max-width: 640px) {
+	body {
+		font-size: 60%;
+	}
+}
+
+@media (max-width: 600px) {
+	body {
+		font-size: 54%;
+	}
+}
+
+@media (max-width: 540px) {
+	body {
+		font-size: 48%;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size: 36%;
+	}
+}
+
+@media (max-width: 360px) {
+	body {
+		font-size: 32%;
+	}
+}
+
+@media (max-width: 320px) {
+	body {
+		font-size: 24%;
+	}
+}
+p, ol, ul, td {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.4em;
+	line-height: 1.8em;
+}
+
+pre {
+	background-color: #eee;
+	padding: 1.0em;
+	font-size: 1.2em;
+}
+
+a {
+	color: #000;&:visited {
+	color: #666;
+}
+&
+:hover {
+	color: #fff;
+	background-color: #000;
+}
+}
+
+div {
+&.field, &
+.actions {
+	margin-bottom: 1.0em;
+}
+}
+
+#notice {
+	color: green;
+}
+
+.field_with_errors {
+	padding: 0.2em;
+	background-color: red;
+	display: table;
+}
+
+#error_explanation {
+	width: 45em;
+	border: 0.2em solid red;
+	padding: 0.7em;
+	padding-bottom: 0;
+	margin-bottom: 2em;
+	background-color: #f0f0f0;h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 0.5em 0.5em 0.5em 1.5em;
+	font-size: 1.2em;
+	margin: -0.7em;
+	margin-bottom: 0;
+	background-color: #c00;
+	color: #fff;
+}
+ul li {
+	font-size: 1.2em;
+	list-style: square;
+}
+}
+
+.przyciski {
+	text-align: right;
+}
+
+.pagination{
+	list-style-type:none;	
+}
+
+.pagination li{
+	display:inline-block;
+}
+
+#newGist{
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color:grey;
+	z-index: 1000;
+	margin:0 auto;
+}
+
+div#newGist div{
+	max-width:940px;
+	padding: 1em;
+	margin: 0 auto;
+} 
+div#newGist div *{
+	display:inline-block;
+	margin:0 auto;
+	
+}
