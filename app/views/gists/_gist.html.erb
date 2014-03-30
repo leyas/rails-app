@@ -1,16 +1,27 @@
 
 	<div class="gist">
-		<h1 class="jezyk">Language: <%= gist.lang %></h1>
-		<%= raw Pygments.highlight(gist.snippet, lexer: gist.lang) %>
+		<h1 class="jezyk"><%= gist.lang %></h1>
+		
+				<% 
+					my_snippet = gist.snippet[0..50]
+				%>
+		<%= raw Pygments.highlight(my_snippet, lexer: gist.lang) %>
 			
 		<div>
 			<p class="opis">
-				<%= gist.description %>
+				<% 
+					my_string = gist.description[0..50]
+					if(my_string.length > 49)
+						 my_string += "..."
+						end
+				%>
+				<%= my_string %>
 			</p>
 			<p class="przyciski">
-				<%= link_to 'Show', gist %> |
-				<%= link_to 'Edit', edit_gist_path(gist) %> |
-				<%= link_to 'Destroy', gist, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<%= link_to image_tag("http://www.prestagraphics.com/images/loupe.png", {:alt=>"Show", :title=>"Show"}) , gist, :class => 'showGist'  %>
+				<%= link_to image_tag("http://www.bobruiskmebel.com/Resources/edit2e.png", {:alt=>"Edit", :title=>"Edit"}) , edit_gist_path(gist), :class => 'editGist' %>
+				<%= link_to image_tag("http://kl1p.com/images/kl1p/delete.png", {:alt=>"Delete", :title=>"Delete"}) , gist, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'deleteGist' %>
+				
 			</p>
 		</div>
 	</div>

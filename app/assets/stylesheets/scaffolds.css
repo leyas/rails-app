@@ -67,14 +67,15 @@ body{
 }
 p, ol, ul, td {
 	font-family: verdana, arial, helvetica, sans-serif;
-	font-size: 1.4em;
-	line-height: 1.8em;
+	font-size: 1.2em;
+	line-height: 1.4em;
 }
 
 pre {
 	background-color: #eee;
 	padding: 1.0em;
 	font-size: 1.2em;
+	overflow-x:hidden;
 }
 
 a {
@@ -129,6 +130,8 @@ ul li {
 
 .przyciski {
 	text-align: right;
+	width:14%;
+	float:left;
 }
 
 a{
@@ -202,4 +205,31 @@ a[href="/gists/new"] {
 
 footer {
     text-align: center;
+}
+
+hr {
+    border: 0.1em solid #DDDDDD;
+    clear: both;
+    height: 0;
+}
+
+.jezyk {
+    float: left;
+    width: 10%;
+    font-size:1.2em;
+}
+
+.highlight {
+    float: left;
+    margin-right: 0.4em;
+    width: 45%;
+}
+
+.opis {
+    float: left;
+    width: 30%;
+}
+
+.editGist > img, .showGist > img , .addGist > img, .deleteGist > img  {
+    width: 1.8em;
 }
