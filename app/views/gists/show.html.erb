@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<img src="http://waxs.org/wp-content/uploads/2014/01/Programming_OOP_Wallpaper_by_hexeno.png" title="baner"  width="940px" height="400px" style="margin-top:-60px;"/>
+
+<p id="notice">
+	<%= notice %>
+</p>
 
 <p>
-  <strong>Snippet:</strong>
+	<strong>Snippet:</strong>
 </p>
 <%= raw Pygments.highlight(@gist.snippet, lexer: @gist.lang) %>
 
 <p>
-  <strong>Lang:</strong>
-  <%= @gist.lang %>
+	<strong>Lang:</strong>
+	<%= @gist.lang %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @gist.description %>
+	<strong>Description:</strong>
+	<%= @gist.description %>
 </p>
-
-<%= link_to 'Edit', edit_gist_path(@gist) %> |
-<%= link_to 'Back', gists_path %>
+<p class="przyciski">
+	<%= link_to 'Edit', edit_gist_path(@gist) %> |
+	<%= link_to 'Back', gists_path %>
+</p>
+<hr />
