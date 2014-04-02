@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :lang %><br>
-    <%= f.text_field :lang %>
+    <%= f.select :lang, Pygments.lexers.sort.map{|key, value| [ value[:name], value[:aliases][0] ] }, {} %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

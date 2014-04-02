@@ -134,6 +134,10 @@ ul li {
 	float:left;
 }
 
+.baner {
+    width: 58em;
+}
+
 a{
 	
 	text-decoration:none;
@@ -152,7 +156,7 @@ a{
     left:0;
     width: 100%;
     z-index: 1002;
-	background-color:grey;
+	background-color:navy;
 }
 
 .pagination a{
