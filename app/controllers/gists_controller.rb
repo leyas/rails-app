@@ -3,7 +3,11 @@ class GistsController < ApplicationController
   # GET /gists
   # GET /gists.json
   def index
-    @gists = Gist.paginate(:page => params[:page], :per_page => 5)
+    @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%"], :order => 'updated_at DESC')
+
+    if !params[:lang_search].blank?
+      @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}"], :order => 'updated_at DESC')
+    end
     respond_to do |format|
       format.html
       format.js
@@ -31,7 +35,7 @@ class GistsController < ApplicationController
 
     respond_to do |format|
       if @gist.save
-        format.html { redirect_to @gist, notice: 'Gist was successfully created.' }
+        format.html { redirect_to gists_url, notice: 'Gist was successfully created.' }
         format.json { render action: 'show', status: :created, location: @gist }
       else
         format.html { render action: 'new' }
@@ -45,7 +49,7 @@ class GistsController < ApplicationController
   def update
     respond_to do |format|
       if @gist.update(gist_params)
-        format.html { redirect_to @gist, notice: 'Gist was successfully updated.' }
+        format.html { redirect_to gists_url, notice: 'Gist was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,7 +74,7 @@ class GistsController < ApplicationController
   def set_gist
     @gist = Gist.find(params[:id])
   end
-
+  
   # Never trust parameters from the scary internet, only allow the white list through.
   def gist_params
     params.require(:gist).permit(:snippet, :lang, :description)
