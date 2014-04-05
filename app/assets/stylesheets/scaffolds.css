@@ -1,70 +1,15 @@
-body{
+body {
+
+	font-size: 90%;
 	background-color: #fff;
 	color: #333;
 	font-family: verdana, arial, helvetica, sans-serif;
 	line-height: 1em;
-	max-width: 940px;
+	max-width: 94em;
 	padding: 3em;
 	margin: 0 auto;
 }
-@media (min-width: 901px) {
-	body {
-		font-size: 90%;
-	}
-}
-@media (max-width: 900px) {
-	body {
-		font-size: 77%;
-	}
-}
 
-@media (max-width: 768px) {
-	body {
-		font-size: 72%;
-	}
-}
-
-@media (max-width: 720px) {
-	body {
-		font-size: 64%;
-	}
-}
-
-@media (max-width: 640px) {
-	body {
-		font-size: 60%;
-	}
-}
-
-@media (max-width: 600px) {
-	body {
-		font-size: 54%;
-	}
-}
-
-@media (max-width: 540px) {
-	body {
-		font-size: 48%;
-	}
-}
-
-@media (max-width: 480px) {
-	body {
-		font-size: 36%;
-	}
-}
-
-@media (max-width: 360px) {
-	body {
-		font-size: 32%;
-	}
-}
-
-@media (max-width: 320px) {
-	body {
-		font-size: 24%;
-	}
-}
 p, ol, ul, td {
 	font-family: verdana, arial, helvetica, sans-serif;
 	font-size: 1.2em;
@@ -75,7 +20,7 @@ pre {
 	background-color: #eee;
 	padding: 1.0em;
 	font-size: 1.2em;
-	overflow-x:hidden;
+	overflow-x: hidden;
 }
 
 a {
@@ -130,110 +75,219 @@ ul li {
 
 .przyciski {
 	text-align: right;
-	width:14%;
-	float:left;
+	width: 14%;
+	float: left;
 }
 
 .baner {
-    width: 58em;
+	width: 58em;
 }
 
-a{
-	
-	text-decoration:none;
-}
+a {
 
+	text-decoration: none;
+}
 
 .pagination {
-    display: block;
-    font-size: 1.2em;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    text-align: center;
-    top: -0.2em;
-    left:0;
-    width: 100%;
-    z-index: 1002;
-	background-color:navy;
+	display: block;
+	font-size: 1.2em;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	text-align: center;
+	top: -0.2em;
+	left: 0;
+	width: 100%;
+	z-index: 1002;
+	background-color: rgb(73, 69, 115);
 }
 
-.pagination a{
-    color:#aaa;
+.pagination a {
+	color: #aaa;
 }
 
-li.active{
-	color:#fff;
+li.active {
+	color: #fff;
 }
 
-.pagination li{
-	display:inline-block;
+.pagination li {
+	display: inline-block;
 }
 
-#newGist{
-	width:100%;
-	position:fixed;
-	top:0;
-	left:0;
+#newGist {
+	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 1005;
-	margin:0 auto;
+	margin: 0 auto;
+	color: #222222;
+	background-color: rgb(238,238,238);
 }
 
-div#newGist div{
-	max-width:940px;
+div#newGist div {
+	max-width: 94em;
 	padding: 0 3em;
 	margin: 0 auto;
-} 
-div#newGist div > *{
-	display:inline;
+}
+div#newGist div > * {
+	display: inline;
 }
 
-.next.disabled, .prev.disabled{
-	display:none;
+.next.disabled, .prev.disabled {
+	display: none;
 }
 
-h1#listGist{
-    float:left;
-    font-size:1.2em;
-    margin:0.3em;
-    color:#aaa;
+h1#listGist {
+	float: left;
+	font-size: 1.2em;
+	margin: 0.3em;
+	color: #aaa;
 }
 
 a[href="/gists/new"] {
-    float:right;
-    font-size:1.2em;
-    margin:0.3em;
-    color:#aaa;
+	float: right;
+	font-size: 1.2em;
+	margin: 0.2em;
+}
+
+a[href="/gists/new"]:hover {
+	text-decoration: underline;
 }
 
 footer {
-    text-align: center;
+	text-align: center;
 }
 
 hr {
-    border: 0.1em solid #DDDDDD;
-    clear: both;
-    height: 0;
+	border: 0.1em solid #DDDDDD;
+	clear: both;
+	height: 0;
 }
 
 .jezyk {
-    float: left;
-    width: 10%;
-    font-size:1.2em;
+	float: left;
+	width: 10%;
+	font-size: 1.2em;
+	padding-top: 0.8em;
 }
 
 .highlight {
-    float: left;
-    margin-right: 0.4em;
-    width: 45%;
+	float: left;
+	margin-right: 0.4em;
+	width: 45%;
 }
 
 .opis {
-    float: left;
-    width: 30%;
+	float: left;
+	width: 30%;
 }
 
-.editGist > img, .showGist > img , .addGist > img, .deleteGist > img  {
-    width: 1.8em;
+.editGist > img, .showGist > img, .addGist > img, .deleteGist > img {
+	width: 1.8em;
 }
+
+.snipet label, #edit2 label {
+	font-size: 1.2em;
+	margin-top: 2em;
+}
+
+.snipet{
+	height: 20em;
+}
+
+.snipet, #edit2{
+	width:45%;
+	margin-right:2.5%;
+	float:left;
+	padding-bottom: 3em;
+}
+
+.actions {
+	float: right;
+	margin-right: 2.5%;
+}
+
+.snipet textarea, #edit2 div input {
+	width: 100%;
+	height: 100%;
+}
+
+div.gist p.actions input[type=image] {
+	width: 1.8em;
+}
+
+select#gist_lang{
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+	body {
+		font-size: 77%;
+	}
+}
+
+@media (max-width: 720px) {
+	.opis, #edit2 {
+		clear: both;
+	}
+
+	.highlight, .jezyk, .przyciski, .opis {
+		width: 48%;
+	}
+
+	.przyciski, .highlight {
+		float: right;
+	}
+	.snipet, #edit2{
+		width:100%;
+	}
+	.snipet .highlight{
+		width:100%;
+		float:left;
+	}
+}
+/*
+ @media (max-width: 640px) {
+ body {
+ font-size: 60%;
+ }
+ }
+
+ @media (max-width: 600px) {
+ body {
+ font-size: 54%;
+ }
+ }
+
+ @media (max-width: 540px) {
+ body {
+ font-size: 48%;
+ }
+ }
+
+ @media (max-width: 480px) {
+ body {
+ font-size: 36%;
+ }
+ }
+
+ @media (max-width: 360px) {
+ body {
+ font-size: 32%;
+ }
+ }
+
+ @media (max-width: 320px) {
+ body {
+ font-size: 24%;
+ }
+ }*/
