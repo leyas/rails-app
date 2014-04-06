@@ -202,6 +202,9 @@ hr {
 	float:left;
 	padding-bottom: 3em;
 }
+.snipet-a .highlight{
+	width:100%;
+}
 
 .actions {
 	float: right;
@@ -250,7 +253,7 @@ select#gist_lang{
 	.snipet, #edit2{
 		width:100%;
 	}
-	.snipet .highlight{
+	.snipet-a .highlight{
 		width:100%;
 		float:left;
 	}

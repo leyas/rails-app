@@ -3,15 +3,15 @@
 		<h1 class="jezyk"><%= gist.lang %></h1>
 		
 				<% 
-					my_snippet = gist.snippet[0..50]
+					my_snippet = gist.snippet[0..45]
 				%>
 		<%= raw Pygments.highlight(my_snippet, lexer: gist.lang) %>
 			
 		<div>
 			<p class="opis">
 				<% 
-					my_string = gist.description[0..50]
-					if(my_string.length > 49)
+					my_string = gist.description[0..40]
+					if(my_string.length > 39)
 						 my_string += "..."
 						end
 				%>
