@@ -1,6 +1,9 @@
 == README
 
+[![Build Status](https://travis-ci.org/leyas/rails-app.svg?branch=master)](https://travis-ci.org/leyas/rails-app)
+
 http://sl-gists.herokuapp.com/
+
 
 - Użyłem 
 ruby '2.1.1'
