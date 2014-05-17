@@ -4,8 +4,7 @@ ruby '2.1.1'
 gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
-group :development do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+group :development, :test do
   gem 'sqlite3', '1.3.8'
 end
 
@@ -49,3 +48,6 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'will_paginate-bootstrap'
 
+group :development, :test do
+  gem 'rspec-rails'
+end
