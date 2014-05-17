@@ -1,12 +1,12 @@
 class GistsController < ApplicationController
   before_action :set_gist, only: [:show, :edit, :update, :destroy]
   # GET /gists
-  # GET /gists.json
   def index
-    @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%"], :order => 'updated_at DESC')
-
+      #@gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%"], :order => 'updated_at DESC')
+      @gists = Gist.order('updated_at DESC').where('snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%").paginate(page: params[:page], per_page: 10)
     if !params[:lang_search].blank?
-      @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}"], :order => 'updated_at DESC')
+    #  @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}"], :order => 'updated_at DESC')
+    @gists = Gist.order('updated_at DESC').where('snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}").paginate(page: params[:page], per_page: 10)
     end
     respond_to do |format|
       format.html
