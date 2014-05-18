@@ -1,5 +1,7 @@
 language: ruby
 rvm:
   - "2.1.0"
+before_script:
+  - "rake db:migrate RAILS_ENV=test"
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
