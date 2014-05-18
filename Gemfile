@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
@@ -21,7 +21,6 @@ gem 'coffee-rails', '~> 4.0.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-ruby '2.1.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -44,11 +43,14 @@ gem 'quiet_assets'
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'shelly-dependencies'
 end
 
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'will_paginate-bootstrap'
+
+gem 'thin'
 
 group :development, :test do
   gem 'rspec-rails'
