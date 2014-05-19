@@ -25,7 +25,7 @@ describe GistsController do
     end
   end
 
-   ######################   NEW   ########################
+   ######################   NEW   ######################
   describe "GET new" do
     it "has a 200 status code" do
       get :new
