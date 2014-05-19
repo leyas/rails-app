@@ -1,8 +1,16 @@
 require 'spec_helper'
 
-describe "gists/edit.html.erb" do
+describe "gists/edit.html.erb", :type => :view do
+  #let(:gist) do
+  #  stub_model Gist, :snippet => "object HelloWorld extends App {println('Hello, world!')}", :description => "World example in Scala (from wiki).", :language => "scala"
+  #end
+  
+  #before do
+  #  assign(:gist, stub_model(Gist, snippet: "object HelloWorld extends App {println('Hello, world!')}", description: "World example in Scala (from wiki).", language: "scala"))
+  #end
+  
   before do
-    assign(:gist, stub_model(Gist, snippet: "object HelloWorld extends App {println('Hello, world!')}", description: "World example in Scala (from wiki).", language: "scala"))
+    assign(:gist, Gist.create!(:snippet => "object HelloWorld extends App {println('Hello, world!')}", :description => "World example in Scala (from wiki).", :lang => "scala"))    
   end
 
   it "displays header" do

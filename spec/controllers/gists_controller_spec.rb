@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe GistsController do
+describe GistsController, :type => :controller do
 
   let(:valid_attributes) { { "snippet" => "object HelloWorld extends App {println('Hello, world!')}", "lang" => "scala", "description" => "Hello World example in Scala (from wiki)." } }
 
@@ -15,7 +15,6 @@ describe GistsController do
     it "renders the index template" do
       get :index
       expect(response).to render_template("index")
-      expect(response.body).to eq ""
     end
 
     it "assigns all gists as @gists" do
