@@ -82,4 +82,3 @@ describe "gists/edit.html.erb" do
   end
 
 end
-
