@@ -90,4 +90,3 @@ describe "gists/edit.html.erb", :type => :view do
   end
 
 end
-
