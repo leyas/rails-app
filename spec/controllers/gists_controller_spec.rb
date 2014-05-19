@@ -45,6 +45,26 @@ describe GistsController do
 
   end
 
+  #######################   CREATE ########################
+  describe "with valid params" do
+    it "makes a new Gist" do
+      expect {
+        post :create, {:gist => valid_attributes}
+      }.to change(Gist, :count).by(1)
+    end
+
+    it "assigns a newly created @ as Gist" do
+      post :create, {:gist => valid_attributes}
+      expect(assigns(:gist)).to be_a(Gist)
+      expect(assigns(:gist)).to be_persisted
+    end
+
+    it "redirects to the /gists " do
+      post :create, {:gist => valid_attributes}
+      expect(response).to redirect_to('/gists')
+    end
+  end
+
   #######################   SHOW   ########################
   describe "GET show" do
     it "assigns the requested gist as @gist" do
@@ -71,7 +91,7 @@ describe GistsController do
       put :update, {:id => gist.to_param, :gist => valid_attributes}
       expect(assigns(:gist)).to eq(gist)
     end
-    
+
     it "updates the requested gist" do
       gist = Gist.create! valid_attributes
       expect_any_instance_of(Gist).to receive(:update).with({ "lang" => "scala" })
