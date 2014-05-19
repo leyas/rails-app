@@ -1,13 +1,20 @@
 == README
 
+Travis
 [![Build Status](https://travis-ci.org/leyas/rails-app.svg?branch=master)](https://travis-ci.org/leyas/rails-app)
 
+Shelly Cloud
+http://szymon.shellyapp.com
+
+
+Heroku
 http://sl-gists.herokuapp.com/
+
 
 
 - Użyłem 
 ruby '2.1.1'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.0'
 
 
 - Jako bazy danych wykorzystałem
@@ -15,6 +22,8 @@ gem 'sqlite3', '1.3.8' (tryb development)
 oraz
 gem 'pg', '0.15.1' (tryb produkcyjny)
 
+
+- Walidacja
 
 - Paginacja
 Użyłem trzech gemów
