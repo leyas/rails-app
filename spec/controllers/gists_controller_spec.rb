@@ -25,7 +25,7 @@ describe GistsController do
     end
   end
 
-   ######################   NEW   ######################
+  ######################   NEW   ######################
   describe "GET new" do
     it "has a 200 status code" do
       get :new
@@ -62,7 +62,33 @@ describe GistsController do
       expect(assigns(:gist)).to eq(gist)
     end
   end
-  
+
   ######################   UPDATE   ########################
 
+  describe "with valid params" do
+    it "assigns the requested gist as @gist" do
+      gist = Gist.create! valid_attributes
+      put :update, {:id => gist.to_param, :gist => valid_attributes}
+      expect(assigns(:gist)).to eq(gist)
+    end
+    
+    it "updates the requested gist" do
+      gist = Gist.create! valid_attributes
+      expect_any_instance_of(Gist).to receive(:update).with({ "lang" => "scala" })
+      put :update, {:id => gist.to_param, :gist => { "lang" => "scala" }}
+    end
+
+    it "redirects to the /gists" do
+      gist = Gist.create! valid_attributes
+      put :update, {:id => gist.to_param, :gist => valid_attributes}
+      expect(response).to redirect_to('/gists')
+    end
+
+    it "update gist and redirect" do
+      gist = Gist.create! valid_attributes
+      expect_any_instance_of(Gist).to receive(:update).with({ "lang" => "c" })
+      put :update, {:id => gist.to_param, :gist => { "lang" => "c" }}
+      expect(response.status).to eq(200)
+    end
+  end
 end
