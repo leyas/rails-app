@@ -1,0 +1,19 @@
+<div id="newGist">
+	<div id="user_menu">
+			<% if user_signed_in? %>
+			<%= link_to "Profile", edit_user_registration_path %>
+			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+			<%= link_to 'New Gist', new_gist_path %>
+
+			<% else %>
+			<%= link_to "Sign in", new_user_session_path %>
+			<%
+			#= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary"
+			%>
+
+			<% end %>
+			
+			<%= link_to "Home", "/gists" %>
+		
+	</div>
+</div>

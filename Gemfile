@@ -9,6 +9,8 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
 end
 
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
 

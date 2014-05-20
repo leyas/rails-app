@@ -1,7 +1,7 @@
 body {
 
 	font-size: 90%;
-	background-color: #fff;
+	background-color: #95b6f3;
 	color: #333;
 	font-family: verdana, arial, helvetica, sans-serif;
 	line-height: 1em;
@@ -117,8 +117,8 @@ li.active {
 
 #newGist {
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 22px;
+	left: 50px;
 	z-index: 1005;
 	margin: 0 auto;
 	color: #222222;
@@ -145,18 +145,21 @@ h1#listGist {
 	color: #aaa;
 }
 
-a[href="/gists/new"] {
+#user_menu a {
 	float: right;
 	font-size: 1.2em;
 	margin: 0.2em;
 }
 
-a[href="/gists/new"]:hover {
+#user_menu a:hover {
 	text-decoration: underline;
 }
 
 footer {
 	text-align: center;
+    background-color: rgb(73, 69, 115);
+    padding: 20px 0;
+    color:#fff;
 }
 
 hr {

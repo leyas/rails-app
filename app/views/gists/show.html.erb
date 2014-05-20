@@ -17,7 +17,9 @@
 		</div>
 
 		<p class="actions">
+			<% if user_signed_in? %>
 			<%= link_to image_tag("http://www.bobruiskmebel.com/Resources/edit2e.png", {:alt=>"Edit", :title=>"Edit"}) , edit_gist_path(@gist), :class => 'editGist' %>
+			<% end %>
 			<%= link_to image_tag("http://www.zielski.com.pl/pliki/grafika/ikony/back.png", {:alt=>"Back", :title=>"Back"}) , gists_path, :class => 'editGist' %>
 		</p>
 	</div>

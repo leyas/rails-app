@@ -2,11 +2,11 @@ class GistsController < ApplicationController
   before_action :set_gist, only: [:show, :edit, :update, :destroy]
   # GET /gists
   def index
-      #@gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%"], :order => 'updated_at DESC')
-      @gists = Gist.order('updated_at DESC').where('snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%").paginate(page: params[:page], per_page: 10)
+    #@gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%"], :order => 'updated_at DESC')
+    @gists = Gist.order('updated_at DESC').where('snippet LIKE ? AND description LIKE ? AND lang LIKE ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "%#{params[:lang_search]}%").paginate(page: params[:page], per_page: 10)
     if !params[:lang_search].blank?
-    #  @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}"], :order => 'updated_at DESC')
-    @gists = Gist.order('updated_at DESC').where('snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}").paginate(page: params[:page], per_page: 10)
+      #  @gists = Gist.paginate(:page => params[:page], :per_page => 10, :conditions => ['snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}"], :order => 'updated_at DESC')
+      @gists = Gist.order('updated_at DESC').where('snippet LIKE ? AND description LIKE ? AND lang = ?', "%#{params[:snippet_search]}%", "%#{params[:desc_search]}%", "#{params[:lang_search]}").paginate(page: params[:page], per_page: 10)
     end
     respond_to do |format|
       format.html
@@ -21,11 +21,18 @@ class GistsController < ApplicationController
 
   # GET /gists/new
   def new
-    @gist = Gist.new
+    if !user_signed_in?
+      redirect_to "/gists", notice: 'Unauthorized access is denied.'
+    else
+      @gist = Gist.new
+    end
   end
 
   # GET /gists/1/edit
   def edit
+    if !user_signed_in?
+      redirect_to "/gists", notice: 'Unauthorized access is denied.'
+    end
   end
 
   # POST /gists
@@ -61,10 +68,14 @@ class GistsController < ApplicationController
   # DELETE /gists/1
   # DELETE /gists/1.json
   def destroy
-    @gist.destroy
-    respond_to do |format|
-      format.html { redirect_to gists_url }
-      format.json { head :no_content }
+    if !user_signed_in?
+      redirect_to "/gists", notice: 'Unauthorized access is denied.'
+    else
+      @gist.destroy
+      respond_to do |format|
+        format.html { redirect_to gists_url }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -74,7 +85,7 @@ class GistsController < ApplicationController
   def set_gist
     @gist = Gist.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def gist_params
     params.require(:gist).permit(:snippet, :lang, :description)
