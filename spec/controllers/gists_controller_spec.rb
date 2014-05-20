@@ -26,21 +26,21 @@ describe GistsController, :type => :controller do
 
   ######################   NEW   ######################
   describe "GET new" do
-    it "has a 200 status code" do
-      get :new
-      expect(response.status).to eq(200)
-    end
+    #it "has a 200 status code" do
+    #  get :new
+    #  expect(response.status).to eq(200)
+    #end
 
-    it "renders the edit template" do
-      get :new
-      expect(response).to render_template("new")
-      expect(response.body).to eq ""
-    end
+    #it "renders the edit template" do
+    #  get :new
+    #  expect(response).to render_template("new")
+    #  expect(response.body).to eq ""
+    #end
 
-    it "assigns a new @ as Gist" do
-      get :new
-      expect(assigns(:gist)).to be_a_new(Gist)
-    end
+    #it "assigns a new @ as Gist" do
+    #  get :new
+    #  expect(assigns(:gist)).to be_a_new(Gist)
+    #end
 
   end
 
